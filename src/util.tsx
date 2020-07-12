@@ -7,7 +7,7 @@ export function generateDataURI(symbol, value, percentageChange) {
   if (isNegative) {
     svg =
       '<?xml version="1.0" encoding="UTF-8"?>' +
-      '<svg width="211px" height="17px" viewBox="0 0 211 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' +
+      '<svg width="211px" height="25px" viewBox="0 0 211 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' +
       '<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">' +
       '<g id="negative-stock" transform="translate(0.000000, -4.000000)">' +
       '<text id="symbol" font-family="Lato-Bold, Lato" font-size="20" font-weight="bold" fill="#000000">' +
@@ -32,7 +32,7 @@ export function generateDataURI(symbol, value, percentageChange) {
   } else {
     svg =
       '<?xml version="1.0" encoding="UTF-8"?>' +
-      '<svg width="211px" height="17px" viewBox="0 0 211 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' +
+      '<svg width="211px" height="25px" viewBox="0 0 211 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' +
       '<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">' +
       '<g id="negative-stock" transform="translate(0.000000, -4.000000)">' +
       '<text id="symbol" font-family="Lato-Bold, Lato" font-size="20" font-weight="bold" fill="#000000">' +
