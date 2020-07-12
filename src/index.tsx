@@ -16,6 +16,7 @@ import ForgeUI, {
   Option,
 } from "@forge/ui";
 import api from "@forge/api";
+import { generateDataURI } from "./util";
 
 const ALPHA_VANTAGE_API_BASE_URL = "https://www.alphavantage.co";
 
@@ -77,12 +78,12 @@ const App = () => {
     async () => await getRandomImage(config.searchTerm),
     async () => await getRandomImage(config.searchTerm)
   );
-
+  var dataURI = generateDataURI(config.symbol, stockValue, percentageChange);
   var output = `${stockValue} -- ${percentageChange}`;
 
   return (
     <Fragment>
-      <StockCard symbol={config.searchTerm} value={output} />
+      <Image src={dataURI} alt={output} />
     </Fragment>
   );
 };
