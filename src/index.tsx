@@ -25,11 +25,15 @@ const defaultConfig = {
 
 interface AlphaVantageJson {
   stockValue: "0.00";
+  percentageChange: "0";
 }
 
 const fallbackDataArray = [
   {
-    "Global Quote": {},
+    "Global Quote": {
+      "05. price": "0.00",
+      "10. change percent": "0",
+    },
   },
 ];
 
@@ -47,12 +51,11 @@ const getRandomImage = async (symbol): Promise<AlphaVantageJson> => {
     dataArray = fallbackDataArray;
   }
   const stockValue = dataArray["Global Quote"]["05. price"];
-  // const { 'Global Quote':  } = dataArray;
-
-  // return {
-  //   alt_description,
-  // };
-  return stockValue;
+  const percentageChange = dataArray["Global Quote"]["10. change percent"];
+  console.log("stock value");
+  console.log(stockValue);
+  console.log({ percentageChange });
+  return { stockValue, percentageChange };
 };
 
 interface StockCardProps {
@@ -70,16 +73,16 @@ const StockCard = ({ symbol, value }: StockCardProps) => (
 const App = () => {
   const config = useConfig();
   const context = useProductContext();
-  const [{ stockValue }, setRandomImage] = useAction(
+  const [{ stockValue, percentageChange }, setRandomImage] = useAction(
     async () => await getRandomImage(config.searchTerm),
     async () => await getRandomImage(config.searchTerm)
   );
 
-  // var stockValue = result["05. price"];
+  var output = `${stockValue} -- ${percentageChange}`;
 
   return (
     <Fragment>
-      <StockCard symbol={config.searchTerm} value={stockValue} />
+      <StockCard symbol={config.searchTerm} value={output} />
     </Fragment>
   );
 };
