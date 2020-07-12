@@ -1,12 +1,12 @@
 modules:
   macro:
-    - key: forge-stock-ticker-hello-world
+    - key: stock-ticker
       function: main
-      title: forge-stock-ticker
-      description: Inserts Hello world!
+      title: Stock Ticker
+      description: Fetches current stock rate
   function:
     - key: main
       handler: index.run
 app:
-  id: 'ari:cloud:ecosystem::app/932af7bf-a78e-4340-bf85-c49fc32b87aa'
+  id: "ari:cloud:ecosystem::app/932af7bf-a78e-4340-bf85-c49fc32b87aa"
   name: forge-stock-ticker
