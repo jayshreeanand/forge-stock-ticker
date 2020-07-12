@@ -78,7 +78,11 @@ const App = () => {
     async () => await getRandomImage(config.searchTerm),
     async () => await getRandomImage(config.searchTerm)
   );
-  var dataURI = generateDataURI(config.symbol, stockValue, percentageChange);
+  var dataURI = generateDataURI(
+    config.searchTerm,
+    stockValue,
+    percentageChange
+  );
   var output = `${stockValue} -- ${percentageChange}`;
 
   return (
